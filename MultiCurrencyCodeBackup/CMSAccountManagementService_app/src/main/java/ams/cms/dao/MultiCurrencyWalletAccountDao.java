@@ -1,0 +1,39 @@
+package ams.cms.dao;
+
+import java.util.List;
+
+import ams.cms.model.MultiCurrencyWalletAccountMaster;
+
+public interface MultiCurrencyWalletAccountDao 
+{
+	int[] batchEntryOfMultiCurrecnyWalletAccountMaster(List<MultiCurrencyWalletAccountMaster> listOfCurrecnyAccountMasters);
+
+	MultiCurrencyWalletAccountMaster getMultiCurrencyWalletAccount(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+	void updateMultiCurrencyWalletAccountMaster(MultiCurrencyWalletAccountMaster currencyWalletAccount);
+
+	MultiCurrencyWalletAccountMaster getMultiCurrencyWalletBaseAccount(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+
+	List<MultiCurrencyWalletAccountMaster> getMultiCurrencyWalletsAccountsList(MultiCurrencyWalletAccountMaster accountCreation);
+
+	MultiCurrencyWalletAccountMaster getCurrencyAccount(
+			MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+	int updateEarMark(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+	int updateClosingBalance(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+	MultiCurrencyWalletAccountMaster getFromToMultiCurrencyWalletAccount(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+	List<MultiCurrencyWalletAccountMaster> getMultiCurrencyAccount(
+			MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+	
+	List<MultiCurrencyWalletAccountMaster> getCurrenyWalletListForStatemetView(
+			MultiCurrencyWalletAccountMaster accountCreation);
+
+	void updateMultiCurrencyWalletAccountMasterWithPriority(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMasterList);
+
+	List<MultiCurrencyWalletAccountMaster> getCurrenyWalletListForPriority(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+}

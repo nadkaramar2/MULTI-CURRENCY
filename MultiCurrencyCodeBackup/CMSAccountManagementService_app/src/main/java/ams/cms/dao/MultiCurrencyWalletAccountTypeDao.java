@@ -1,0 +1,14 @@
+package ams.cms.dao;
+
+import java.util.List;
+
+import ams.cms.model.MultiCurrencyWalletAccountTypeMaster;
+
+public interface MultiCurrencyWalletAccountTypeDao extends GenericDao<MultiCurrencyWalletAccountTypeMaster>
+{
+	List<MultiCurrencyWalletAccountTypeMaster> getAccountTypeWiseMultiCurrencyWalletList(MultiCurrencyWalletAccountTypeMaster accountWisePriorityWallet);
+
+	MultiCurrencyWalletAccountTypeMaster getMultiCurrencyAccountTypeMasterByCurrencyCode(MultiCurrencyWalletAccountTypeMaster currnecyWalletAccount);
+
+	MultiCurrencyWalletAccountTypeMaster getMultiCurrencyAccountTypeMasterByCurrencyCodeAndAccountType(MultiCurrencyWalletAccountTypeMaster multiCurrencyWalletAccountTypeMaster);
+}

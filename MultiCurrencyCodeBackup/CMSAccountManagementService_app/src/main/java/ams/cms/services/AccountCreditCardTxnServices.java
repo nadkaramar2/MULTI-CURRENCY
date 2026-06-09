@@ -1,0 +1,23 @@
+package ams.cms.services;
+
+import java.util.List;
+
+import ams.cms.api.model.AccountCreditCardTxnResponse;
+import ams.cms.api.model.AccountWiseInterestMasterResponse;
+import ams.cms.api.model.AccountCreditBalanceTxnResponse;
+import ams.cms.api.model.AccountCreditCardInterestResponse;
+import ams.cms.model.AccountCreation;
+import ams.cms.model.AccountCreditCardTransactionModel;
+
+public interface AccountCreditCardTxnServices 
+{
+	List<AccountCreditCardTransactionModel> getAccountCreditCardTxn(AccountCreditCardTransactionModel accountCreditCardTransactionModel);
+	List<AccountCreditBalanceTxnResponse> getCreditCardTxn(AccountCreditCardTransactionModel accountCreditCardTransactionModel);
+	List<AccountCreditCardTxnResponse> getCreditCardBalancelist(AccountCreation accountCreation);
+	List<AccountCreditCardInterestResponse> getCreditCardInterestlist(AccountCreation accountCreation);
+	List<AccountWiseInterestMasterResponse> getCreditAccountWiseInterestList(ams.cms.scheduler.model.AccountWiseInterestMaster accountWiseInterestMaster);
+	
+	AccountCreditCardTransactionModel addAccountCreditCardTransactionModel(AccountCreditCardTransactionModel accountCreditCardTransactionModel) throws Exception;
+	
+	int addAccountCreditCardTxn(AccountCreditCardTransactionModel accountCreditCardTransactionModel);
+}

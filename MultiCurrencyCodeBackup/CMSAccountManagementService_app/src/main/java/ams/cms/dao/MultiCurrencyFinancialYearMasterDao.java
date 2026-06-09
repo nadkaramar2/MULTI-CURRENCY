@@ -1,0 +1,20 @@
+package ams.cms.dao;
+
+import java.util.List;
+
+import ams.cms.api.model.AccountMaster;
+import ams.cms.model.MultiCurrencyFinancialYearMaster;
+
+public interface MultiCurrencyFinancialYearMasterDao extends GenericDao<MultiCurrencyFinancialYearMaster> {
+
+	MultiCurrencyFinancialYearMaster getFinancialYearNyAccountNumber(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMaster);
+
+	void updatFinancialYearTable(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMaster);
+
+	List<AccountMaster> resetMultiCurrencyFinancialYearMaster(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMaster);
+
+	List<MultiCurrencyFinancialYearMaster> getListFinancialYearNyAccountNumberAndChannel(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMasterObj);
+
+	
+
+}

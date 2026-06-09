@@ -1,0 +1,10 @@
+package ams.cms.services;
+
+import ams.cms.model.AccountTransactionLimitation;
+
+public interface AccountTransactionLimitationService 
+{
+	AccountTransactionLimitation saveAccountTransactionLimitation(AccountTransactionLimitation accountTransactionLimitation) throws Exception;
+	
+	AccountTransactionLimitation getAccountTxnLimitBasedOnParam(AccountTransactionLimitation accountTransactionLimitation) throws Exception;
+}

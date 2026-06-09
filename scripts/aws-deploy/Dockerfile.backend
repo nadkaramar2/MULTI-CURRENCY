@@ -1,0 +1,14 @@
+FROM maven:3.9-eclipse-temurin-8 AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+COPY docker/dbconfig.properties src/main/resources/dbconfig.properties
+COPY docker/application-docker.properties src/main/resources/application-docker.properties
+RUN mvn -q -DskipTests package
+
+FROM eclipse-temurin:8-jre
+WORKDIR /usr/app
+RUN mkdir -p /usr/app/data/imageUploads /usr/app/data/TierPhotos /usr/app/data/qrcode /usr/app/data/dynamic/qrcode
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8285
+ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.additional-location=classpath:/application-docker.properties"]

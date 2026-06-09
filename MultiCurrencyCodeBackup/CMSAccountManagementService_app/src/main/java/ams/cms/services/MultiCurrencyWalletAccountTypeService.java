@@ -1,0 +1,17 @@
+package ams.cms.services;
+
+import java.util.List;
+
+import ams.cms.model.MultiCurrencyWalletAccountTypeMaster;
+
+public interface MultiCurrencyWalletAccountTypeService 
+{
+	MultiCurrencyWalletAccountTypeMaster insertEntryForAccountWisePriorityWallet(MultiCurrencyWalletAccountTypeMaster accountWisePriorityWallet);
+
+	List<MultiCurrencyWalletAccountTypeMaster> getAccountTypeWiseMultiCurrencyWalletList(MultiCurrencyWalletAccountTypeMaster accountWisePriorityWallet);
+
+	MultiCurrencyWalletAccountTypeMaster getMultiCurrencyAccountTypeMasterByCurrencyCode(MultiCurrencyWalletAccountTypeMaster currnecyWalletAccount);
+
+	MultiCurrencyWalletAccountTypeMaster getMultiCurrencyAccountTypeMasterByCurrencyCodeAndAccountType(MultiCurrencyWalletAccountTypeMaster multiCurrencyWalletAccountTypeMaster);
+
+}

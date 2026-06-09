@@ -1,0 +1,23 @@
+package ams.cms.services;
+
+import java.util.List;
+
+import ams.cms.model.MultiCurrencyFinancialYearMaster;
+
+public interface MultiCurrencyFinancialYearMasterService {
+
+	MultiCurrencyFinancialYearMaster saveMultiCurrencyFinancialYearMaster(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMaster);
+	
+	MultiCurrencyFinancialYearMaster getFinancialYearNyAccountNumber(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMaster);
+
+	void updatFinancialYearTable(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMaster);
+	
+	void resetMultiCurrencyFinancialYearMaster(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMaster);
+
+	List<MultiCurrencyFinancialYearMaster> getListFinancialYearNyAccountNumberAndChannel(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMasterObj);
+
+	
+	void addMultiCurrencyFinancialYearMaster(MultiCurrencyFinancialYearMaster multiCurrencyFinancialYearMaster);
+	
+
+}

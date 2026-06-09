@@ -1,0 +1,61 @@
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: multicurrency-mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: account_management_sequro
+    volumes:
+      - mc_mysql_data:/var/lib/mysql
+      - ./DB/Multicurrency_database_20-07-2024.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    networks:
+      - mc-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 120s
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend/CMSAccountManagementService_app
+      dockerfile: Dockerfile
+    container_name: multicurrency-backend
+    environment:
+      EC2_PUBLIC_IP: ${EC2_PUBLIC_IP}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "8385:8285"
+    volumes:
+      - mc_uploads:/usr/app/data
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - mc-net
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./ui/Multcurrency_updatedCode-31-10-2024
+      dockerfile: Dockerfile
+      args:
+        API_BASE_URL: http://${EC2_PUBLIC_IP}:8385/AccountManagementAPI/
+    container_name: multicurrency-frontend
+    ports:
+      - "8380:80"
+    depends_on:
+      - backend
+    networks:
+      - mc-net
+    restart: unless-stopped
+
+networks:
+  mc-net:
+
+volumes:
+  mc_mysql_data:
+  mc_uploads:

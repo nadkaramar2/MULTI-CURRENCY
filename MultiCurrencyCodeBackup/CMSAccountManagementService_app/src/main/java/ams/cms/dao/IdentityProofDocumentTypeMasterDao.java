@@ -1,0 +1,12 @@
+package ams.cms.dao;
+
+import java.util.List;
+
+import ams.cms.model.IdentityProofDocumentTypeMaster;
+
+public interface IdentityProofDocumentTypeMasterDao extends GenericDao<IdentityProofDocumentTypeMaster>
+{
+	List<IdentityProofDocumentTypeMaster> getIdentityProofDocumentTypeMasters(IdentityProofDocumentTypeMaster identityProofDocumentTypeMaster);
+	
+	IdentityProofDocumentTypeMaster getIdentityProofDocumentTypeMasterObject(IdentityProofDocumentTypeMaster identityProofDocumentTypeMaster);
+}

@@ -1,0 +1,16 @@
+package ams.cms.services;
+
+import java.util.List;
+
+import ams.cms.model.AccountTypeWiseBlockedMccMaster;
+
+public interface AccountTypeWiseBlockedMccService 
+{
+	AccountTypeWiseBlockedMccMaster addAccountTypeWiseBlockedMcc(AccountTypeWiseBlockedMccMaster accountTypeWiseBlockedMccMaster) throws Exception;
+	List<AccountTypeWiseBlockedMccMaster> getAccountTypeWiseBlockedMccList(AccountTypeWiseBlockedMccMaster accountTypeWiseBlockedMccMaster) throws Exception;
+	List<AccountTypeWiseBlockedMccMaster> getAccountTypeWiseUnBlockedMccMaster(AccountTypeWiseBlockedMccMaster accountTypeWiseBlockedMccMaster);
+	
+	
+	//prashant
+	List<AccountTypeWiseBlockedMccMaster>getBlockMccListAccountTypeWise(AccountTypeWiseBlockedMccMaster accountTypeWiseBlockedMccMaster) throws Exception;
+}

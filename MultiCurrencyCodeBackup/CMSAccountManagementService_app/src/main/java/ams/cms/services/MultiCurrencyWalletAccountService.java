@@ -1,0 +1,44 @@
+package ams.cms.services;
+
+import java.util.List;
+
+import ams.cms.model.CurrencyConversionRateRequest;
+import ams.cms.model.MultiCurrencyWalletAccountMaster;
+import ams.cms.util.ProcessResponse;
+
+public interface MultiCurrencyWalletAccountService {
+
+	String generateMultiCurrencyAccountNumber(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+	int createWalletAccountBasedOnCurrencyWise(List<MultiCurrencyWalletAccountMaster> listOfWalletAccountMasters);
+
+	MultiCurrencyWalletAccountMaster getMultiCurrencyWalletAccount(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+	void updateMultiCurrencyWalletAccountMaster(MultiCurrencyWalletAccountMaster currencyWalletAccount);
+
+	ProcessResponse viewCurrencyWallet(MultiCurrencyWalletAccountMaster accountCreation);
+
+	ProcessResponse getCurrencyCodeByAccountNumber(MultiCurrencyWalletAccountMaster accountCreation);
+
+	ProcessResponse getCurrencyConversionRate(CurrencyConversionRateRequest currencyConversionRateRequest);
+
+	MultiCurrencyWalletAccountMaster getCurrencyAccount(
+			MultiCurrencyWalletAccountMaster fromMultiCurrencyWalletDetails);
+
+	int updateEarMark(MultiCurrencyWalletAccountMaster earMarkUpdate);
+
+	int updateClosingBalance(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+	List<MultiCurrencyWalletAccountMaster> getMultiCurrencyAccount(MultiCurrencyWalletAccountMaster currencyWalletAccountMaster);
+
+	MultiCurrencyWalletAccountMaster getFromToMultiCurrencyWalletAccount(MultiCurrencyWalletAccountMaster multiCurrencyWalletAccountMaster);
+
+	ProcessResponse getCurrenyWalletListForStatemetView(MultiCurrencyWalletAccountMaster accountCreation);
+
+	ProcessResponse getWalletPriorityList(MultiCurrencyWalletAccountMaster accountCreation);
+
+	ProcessResponse updateWalletPriorityList(MultiCurrencyWalletAccountMaster accountCreation);
+
+	
+
+}
